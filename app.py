@@ -51,7 +51,7 @@ def login():
         return response
     else:
         print(f"User {request.form['loginEmail']} login failed")
-        return render_template("index.html", message="Login failed")
+        return render_template("index.html", message="Login failed"), 403
 
 @app.route('/signup', methods=['POST'])
 def signup():
