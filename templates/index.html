@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MyAccounts Login</title>
+</head>
+<body>
+  <div>
+    <h1>Messages</h1>
+    {% if message != None %}
+      <p>{{message}}</p>
+    {% else %}
+      <p>No new messages</p>
+    {% endif %}
+  </div>
+  <div>
+    <h1>Login!</h1>
+    <div>
+      <form method="post" action="{{url_for('login')}}">
+        <input type="email" id="loginEmail" name="loginEmail" placeholder="Enter email here" required />
+        <input type="password" id="loginPassword" name="loginPassword" placeholder="Enter password here" required />
+        <input  type="submit" id="loginButton" value="Login!"/>
+      </form>
+      <div>
+        <h3>No account? Sign up!</h3>
+        <form method="post" action="{{url_for('signup')}}">
+        <input type="email" id="signupEmail" name="signupEmail" placeholder="Enter email here" required />
+        <input type="password" id="signupPassword" name="signupPassword" placeholder="Enter password here" required />
+        <input  type="submit" id="signupButton" value="Sign Up!"/>
+      </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
